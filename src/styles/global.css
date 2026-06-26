@@ -627,7 +627,7 @@ cite {
 /* Events */
 
 .events-section {
-  background: var(--cream);
+  background: var(--navy);
 }
 
 .event-list {
@@ -664,8 +664,8 @@ cite {
 /* Contact */
 
 .contact-section {
-  background: var(--navy);
-  color: var(--white);
+  background: var(--cream);
+  color: var(--navy);
 }
 
 .contact-section .section-title {
