@@ -6,8 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
-    "deplopy": "npx wrangler deploy"
+    "preview": "astro preview",
+    "deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "astro": "^5.0.0"
