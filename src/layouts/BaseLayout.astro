@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+
+const {
+  title = "Mariane Frangi | Children's Book Author",
+  description = "Funny interactive children's books by Mariane Frangi that make kids laugh, read, and learn."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d073b" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>

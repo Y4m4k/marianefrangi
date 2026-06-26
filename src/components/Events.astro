@@ -1,0 +1,42 @@
+---
+const events = [
+  {
+    date: "Coming soon",
+    place: "Local school or library",
+    title: "Story Time and Author Q&A",
+    note: "Event details will be posted here."
+  },
+  {
+    date: "Coming soon",
+    place: "Vendor market",
+    title: "Book signing and meet the author",
+    note: "Stop by for signed books and activities."
+  },
+  {
+    date: "Coming soon",
+    place: "Community event",
+    title: "Interactive Read-Aloud",
+    note: "Bring the kids for a silly story time."
+  }
+];
+---
+
+<section class="section light events-section" id="events">
+  <div class="wrap event-grid">
+    <div>
+      <p class="eyebrow">Book tour</p>
+      <h2>Upcoming events</h2>
+      <p>Use this section for school visits, library readings, vendor events, and book signings.</p>
+    </div>
+
+    <div class="event-list">
+      {events.map((event) => (
+        <article class="event-item">
+          <p class="event-date">{event.date} · {event.place}</p>
+          <h3>{event.title}</h3>
+          <p>{event.note}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

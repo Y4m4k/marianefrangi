@@ -1,0 +1,31 @@
+---
+const quotes = [
+  {
+    quote: "The kids laughed, listened, and wanted to keep reading.",
+    source: "Teacher feedback"
+  },
+  {
+    quote: "A fun read-aloud that makes reading feel silly and exciting.",
+    source: "Parent feedback"
+  },
+  {
+    quote: "Perfect for classrooms, libraries, and story time.",
+    source: "Library/event feedback"
+  }
+];
+---
+
+<section class="section dark">
+  <div class="wrap">
+    <h2 class="section-title orange">What readers are saying</h2>
+
+    <div class="quote-grid">
+      {quotes.map((item) => (
+        <blockquote>
+          <p>“{item.quote}”</p>
+          <cite>— {item.source}</cite>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>

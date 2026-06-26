@@ -1,0 +1,22 @@
+---
+const shops = [
+  { name: "Amazon", url: "PASTE-AMAZON-AUTHOR-LINK-HERE" },
+  { name: "Book Read-Alouds", url: "#visits" },
+  { name: "School Visits", url: "#contact" },
+  { name: "Library Events", url: "#contact" },
+  { name: "Vendor Events", url: "#contact" },
+  { name: "Free Activities", url: "#activities" }
+];
+---
+
+<section class="section buy-section" id="shop">
+  <div class="wrap narrow">
+    <div class="cart-icon" aria-hidden="true">♡</div>
+    <h2 class="center">Find Mariane’s books and events</h2>
+    <div class="shop-grid">
+      {shops.map((shop) => (
+        <a href={shop.url}>{shop.name}</a>
+      ))}
+    </div>
+  </div>
+</section>

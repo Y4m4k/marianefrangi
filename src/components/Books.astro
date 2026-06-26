@@ -1,0 +1,45 @@
+---
+const books = [
+  {
+    title: "Do You Want to Read Me?",
+    image: "/images/do-you-want-to-read-me.jpg",
+    description: "A funny interactive story told from the perspective of the book itself.",
+    link: "PASTE-AMAZON-LINK-HERE"
+  },
+  {
+    title: "Why Books Dread Summer Vacation",
+    image: "/images/why-books-dread-summer-vacation.jpg",
+    description: "A silly summer read-aloud full of big feelings, animal facts, positivity, and laughs.",
+    link: "PASTE-AMAZON-LINK-HERE"
+  },
+  {
+    title: "Why Books Love Winter",
+    image: "/images/why-books-love-winter.jpg",
+    description: "A cozy, funny book adventure for young readers and classrooms.",
+    link: "PASTE-AMAZON-LINK-HERE"
+  }
+];
+---
+
+<section class="section light" id="books">
+  <div class="wrap">
+    <p class="eyebrow center">Books by Mariane Frangi</p>
+    <h2 class="section-title center">The Book That Wants to Be Read</h2>
+    <p class="section-intro">
+      Funny interactive stories for kids ages 4–9, families, teachers, and librarians.
+    </p>
+
+    <div class="book-grid">
+      {books.map((book) => (
+        <article class="book-card">
+          <img src={book.image} alt={`${book.title} book cover`} />
+          <div class="book-card-content">
+            <h3>{book.title}</h3>
+            <p>{book.description}</p>
+            <a class="small-button" href={book.link} target="_blank" rel="noopener">Buy on Amazon</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
