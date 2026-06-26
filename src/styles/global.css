@@ -699,8 +699,8 @@ cite {
 /* Footer */
 
 .footer {
-  background: var(--navy);
-  color: var(--cream);
+  background: var(--cream);
+  color: var(--navy);
   border-top: 1px solid rgba(255, 246, 232, 0.18);
   text-align: center;
   padding: 28px 18px;
@@ -711,7 +711,7 @@ cite {
 }
 
 .footer a {
-  color: var(--yellow);
+  color: var(--black);
   font-weight: 800;
 }
 
