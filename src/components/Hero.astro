@@ -1,11 +1,32 @@
 ---
 const amazonMainLink = "https://www.amazon.com/stores/Mariane-Frangi/author/B0FT1XPKV6";
 const bookingEmail = "mailto:YOUR-EMAIL-HERE?subject=School%20or%20Library%20Read-Aloud%20Request";
+
+const featuredBooks = [
+  {
+    image: "/images/do-you-want-to-read-me.PNG",
+    alt: "Do You Want to Read Me book cover"
+  },
+  {
+    image: "/images/why-books-dread-summer-vacation.PNG",
+    alt: "Why Books Dread Summer Vacation book cover"
+  },
+  {
+    image: "/images/why-books-love-winter.PNG",
+    alt: "Why Books Love Winter book cover"
+  }
+];
 ---
 
 <section class="hero wrap" id="top">
-  <div class="hero-cover">
-    <img src="/images/featured-book-cover.PNG" alt="Featured book cover by Mariane Frangi" />
+  <div class="hero-cover hero-slideshow" aria-label="Featured books by Mariane Frangi">
+    {featuredBooks.map((book, index) => (
+      <img
+        class={`slide slide-${index + 1}`}
+        src={book.image}
+        alt={book.alt}
+      />
+    ))}
   </div>
 
   <div class="hero-copy">
