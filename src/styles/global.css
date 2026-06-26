@@ -629,7 +629,7 @@ cite {
 .events-section {
   background:
     radial-gradient(circle at top right, var(--yellow-soft), transparent 30%),
-    var(--soft-cream);
+    var(--cream);
 }
 
 .event-list {
