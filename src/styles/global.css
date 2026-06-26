@@ -669,10 +669,7 @@ cite {
 /* Contact */
 
 .contact-section {
-  background:
-    radial-gradient(circle at 15% 15%, rgba(255, 224, 131, 0.24), transparent 28%),
-    radial-gradient(circle at 80% 80%, rgba(255, 175, 199, 0.18), transparent 32%),
-    linear-gradient(135deg, var(--navy), var(--purple));
+  background: var(--navy);
   color: var(--white);
 }
 
