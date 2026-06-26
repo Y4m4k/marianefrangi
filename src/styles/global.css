@@ -2,12 +2,12 @@
 
 :root {
   --cream: #fff6e8;
-  --soft-cream: #fffdf7;
   --white: #ffffff;
 
   --navy: #2d2357;
-  --purple: #5b4bb7;
-  --purple-soft: #eeeafd;
+  --ink: #29233f;
+  --muted: #665f78;
+  --line: rgba(45, 35, 87, 0.18);
 
   --coral: #ff735c;
   --coral-dark: #e95743;
@@ -21,22 +21,14 @@
   --mint: #bdecc9;
   --mint-soft: #ecfff0;
 
-  --pink: #ffafc7;
-  --pink-soft: #fff0f5;
-
-  --ink: #29233f;
-  --muted: #665f78;
-  --line: rgba(45, 35, 87, 0.18);
-
   --shadow: 8px 8px 0 rgba(45, 35, 87, 0.16);
   --shadow-strong: 10px 10px 0 rgba(45, 35, 87, 0.24);
 
   --heading-font: "Fredoka", Arial, sans-serif;
   --body-font: "Nunito", Arial, sans-serif;
-
-  --orange: var(--coral);
-  --orange-dark: var(--coral-dark);
 }
+
+/* Base */
 
 * {
   box-sizing: border-box;
@@ -97,15 +89,21 @@ a {
   z-index: 50;
   background: rgba(255, 246, 232, 0.94);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 3px solid rgba(255, 224, 131, 0.9);
 }
 
+/* Wider header on large screens */
+.site-header .wrap {
+  width: min(1360px, calc(100% - 72px));
+}
+
 .nav {
-  min-height: 76px;
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 36px;
 }
 
 .brand,
@@ -116,21 +114,22 @@ a {
 .brand {
   font-family: var(--heading-font);
   color: var(--navy);
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
-  font-size: 0.86rem;
+  gap: 28px;
+  font-size: 0.98rem;
   font-weight: 900;
 }
 
 .nav-links a {
   color: var(--navy);
-  padding: 8px 0;
+  padding: 10px 0;
 }
 
 .nav-links a:hover {
@@ -140,7 +139,7 @@ a {
 /* Hero */
 
 .hero {
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - 88px);
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
   gap: 72px;
@@ -152,7 +151,6 @@ a {
   justify-self: center;
 }
 
-/* Featured book slideshow */
 .hero-slideshow {
   position: relative;
   width: min(330px, 74vw);
@@ -164,7 +162,6 @@ a {
   overflow: hidden;
 }
 
-/* This makes all slides sit in the same exact spot */
 .hero-slideshow img {
   position: absolute;
   inset: 0;
@@ -179,7 +176,6 @@ a {
   animation: bookFade 12s infinite;
 }
 
-/* Each book appears for 4 seconds */
 .hero-slideshow .slide-1 {
   animation-delay: 0s;
 }
@@ -219,7 +215,6 @@ a {
   }
 }
 
-/* Accessibility: if someone has motion reduced, show only the first cover */
 @media (prefers-reduced-motion: reduce) {
   .hero-slideshow img {
     animation: none;
@@ -231,6 +226,10 @@ a {
   }
 }
 
+.hero-copy {
+  max-width: 780px;
+}
+
 .eyebrow {
   color: var(--coral);
   text-transform: uppercase;
@@ -238,10 +237,6 @@ a {
   font-size: 0.78rem;
   font-weight: 900;
   margin: 0 0 14px;
-}
-
-.center {
-  text-align: center;
 }
 
 .hero h1,
@@ -261,7 +256,6 @@ a {
 .hero h1 {
   font-size: clamp(3rem, 7vw, 6.4rem);
   margin: 0 0 18px;
-  max-width: 780px;
 }
 
 .hero-subtitle {
@@ -337,9 +331,26 @@ a {
   background: var(--cream);
 }
 
-.dark {
-  background:var(--navy);
+.dark,
+.statement {
+  background: var(--navy);
   color: var(--white);
+}
+
+.statement {
+  padding: 88px 0;
+}
+
+.dark .section-title,
+.dark h2,
+.statement h2,
+.statement .orange {
+  color: var(--yellow);
+}
+
+.dark .section-intro,
+.statement-text {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .section-title {
@@ -355,28 +366,21 @@ a {
   font-size: 1.08rem;
 }
 
+.center {
+  text-align: center;
+}
+
 .left {
   text-align: left;
 }
 
 /* Statement Section */
 
-.statement {
-  background: var(--navy);
-  color: var(--white);
-  padding: 88px 0;
-}
-
 .two-column {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 72px;
   align-items: start;
-}
-
-.statement h2,
-.orange {
-  color: var(--yellow);
 }
 
 .statement h2,
@@ -624,31 +628,57 @@ cite {
   max-width: 520px;
 }
 
-/* Events */
+/* Activities / Free Activities */
+
+.activities {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.activities h2,
+.activities .section-title {
+  color: var(--navy);
+}
+
+.activities .section-intro {
+  color: var(--muted);
+}
+
+/* Events / Book Tour */
 
 .events-section {
-  background: var(--cream);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.events-section h2,
+.events-section .section-title {
+  color: var(--yellow);
+}
+
+.events-section .section-intro {
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .event-list {
-  border-top: 2px solid var(--line);
+  border-top: 2px solid rgba(255, 255, 255, 0.22);
 }
 
 .event-item {
   padding: 22px 0;
-  border-bottom: 2px solid var(--line);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.22);
 }
 
 .event-item h3 {
   font-family: var(--heading-font);
   font-size: 2rem;
-  color: var(--navy);
+  color: var(--white);
   line-height: 1;
   margin: 0 0 8px;
 }
 
 .event-date {
-  color: var(--coral);
+  color: var(--yellow);
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -658,18 +688,23 @@ cite {
 
 .event-item p:last-child {
   margin: 0;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.86);
 }
 
-/* Contact */
+/* Contact / Reach Out */
 
 .contact-section {
-  background: var(--navy);
-  color: var(--white);
+  background: var(--cream);
+  color: var(--ink);
 }
 
+.contact-section h2,
 .contact-section .section-title {
-  color: var(--yellow);
+  color: var(--navy);
+}
+
+.contact-section .section-intro {
+  color: var(--muted);
 }
 
 .contact-list {
@@ -678,11 +713,12 @@ cite {
 
 .contact-list p {
   margin: 0 0 30px;
+  color: var(--ink);
 }
 
 .contact-list span {
   display: block;
-  color: var(--yellow);
+  color: var(--coral);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.78rem;
@@ -691,17 +727,17 @@ cite {
 }
 
 .contact-list a {
-  color: var(--white);
-  text-decoration-color: var(--yellow);
+  color: var(--navy);
+  text-decoration-color: var(--coral);
   font-weight: 800;
 }
 
 /* Footer */
 
 .footer {
-  background: var(--cream);
-  color: var(--navy);
-  border-top: 1px solid rgba(255, 246, 232, 0.18);
+  background: var(--navy);
+  color: var(--cream);
+  border-top: 3px solid var(--yellow);
   text-align: center;
   padding: 28px 18px;
 }
@@ -711,7 +747,7 @@ cite {
 }
 
 .footer a {
-  color: var(--navy);
+  color: var(--yellow);
   font-weight: 800;
 }
 
@@ -732,9 +768,24 @@ code {
     width: min(100% - 32px, 1120px);
   }
 
+  .site-header .wrap {
+    width: min(100% - 32px, 1120px);
+  }
+
   .nav {
     justify-content: center;
     text-align: center;
+    min-height: 76px;
+    gap: 22px;
+  }
+
+  .brand {
+    font-size: 1.35rem;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 0.84rem;
   }
 
   .hero,
