@@ -338,9 +338,7 @@ a {
 }
 
 .dark {
-  background:
-    radial-gradient(circle at top left, rgba(255, 224, 131, 0.22), transparent 32%),
-    linear-gradient(135deg, var(--navy), var(--purple));
+  background:var(--navy);
   color: var(--white);
 }
 
@@ -364,10 +362,7 @@ a {
 /* Statement Section */
 
 .statement {
-  background:
-    radial-gradient(circle at 12% 20%, rgba(255, 224, 131, 0.28), transparent 28%),
-    radial-gradient(circle at 85% 70%, rgba(142, 216, 248, 0.22), transparent 30%),
-    linear-gradient(135deg, var(--navy), var(--purple));
+  background: var(--navy);
   color: var(--white);
   padding: 88px 0;
 }
