@@ -664,8 +664,8 @@ cite {
 /* Contact */
 
 .contact-section {
-  background: var(--cream);
-  color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
 }
 
 .contact-section .section-title {
