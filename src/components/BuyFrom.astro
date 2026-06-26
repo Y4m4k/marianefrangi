@@ -13,9 +13,16 @@ const shops = [
   <div class="wrap narrow">
     <div class="cart-icon" aria-hidden="true">♡</div>
     <h2 class="center">Find Mariane’s books and events</h2>
+
     <div class="shop-grid">
       {shops.map((shop) => (
-        <a href={shop.url}>{shop.name}</a>
+        <a
+          href={shop.url}
+          target={shop.url.startsWith("http") ? "_blank" : undefined}
+          rel={shop.url.startsWith("http") ? "noopener" : undefined}
+        >
+          {shop.name}
+        </a>
       ))}
     </div>
   </div>
