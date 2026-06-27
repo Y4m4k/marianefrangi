@@ -850,10 +850,37 @@ code {
     position: static;
   }
 
-  .nav-links {
+  .site-header .wrap {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .nav {
+    min-height: auto;
+    flex-direction: column;
     justify-content: center;
-    gap: 12px;
-    font-size: 0.74rem;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 0 16px;
+    text-align: center;
+  }
+
+  .brand {
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 16px;
+    font-size: 0.78rem;
+    line-height: 1;
+  }
+
+  .nav-links a {
+    padding: 6px 0;
   }
 
   .button,
