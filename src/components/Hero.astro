@@ -16,12 +16,14 @@ const featuredBooks = [
     alt: "Why Books Love Winter book cover"
   }
 ];
+
+const loopingBooks = [...featuredBooks, featuredBooks[0]];
 ---
 
 <section class="hero wrap" id="top">
   <div class="hero-cover hero-slideshow" aria-label="Featured books by Mariane Frangi">
     <div class="hero-track">
-      {featuredBooks.map((book) => (
+      {loopingBooks.map((book) => (
         <img
           src={book.image}
           alt={book.alt}
