@@ -20,13 +20,14 @@ const featuredBooks = [
 
 <section class="hero wrap" id="top">
   <div class="hero-cover hero-slideshow" aria-label="Featured books by Mariane Frangi">
-    {featuredBooks.map((book, index) => (
-      <img
-        class={`slide slide-${index + 1}`}
-        src={book.image}
-        alt={book.alt}
-      />
-    ))}
+    <div class="hero-track">
+      {featuredBooks.map((book) => (
+        <img
+          src={book.image}
+          alt={book.alt}
+        />
+      ))}
+    </div>
   </div>
 
   <div class="hero-copy">
