@@ -197,6 +197,7 @@ a {
     transform: translateX(-50%);
   }
 
+  96%,
   100% {
     transform: translateX(-75%);
   }
