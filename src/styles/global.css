@@ -167,7 +167,7 @@ a {
   display: flex;
   width: 400%;
   height: 100%;
-  animation: bookScroll 15s infinite;
+  animation: bookScroll 15s linear infinite;
 }
 
 .hero-track img {
@@ -183,21 +183,21 @@ a {
 
 @keyframes bookScroll {
   0%,
-  24% {
+  26.666% {
     transform: translateX(0);
   }
 
-  32%,
-  56% {
+  33.333%,
+  60% {
     transform: translateX(-25%);
   }
 
-  64%,
-  88% {
+  66.666%,
+  93.333% {
     transform: translateX(-50%);
   }
 
-  96%,
+  99.999%,
   100% {
     transform: translateX(-75%);
   }
